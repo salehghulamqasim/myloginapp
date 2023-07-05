@@ -7,34 +7,33 @@ class Welcome extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    
     return Scaffold(
-      
       body: Container(
         height: double.infinity,
         width: double.infinity,
         color: Colors.purple,
-        child: Stack(
-          children: [
+        child: Stack(children: [
           Center(
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,//y-axis
+              mainAxisAlignment: MainAxisAlignment.center, //y-axis
               children: [
-                Text("Welcome",style: TextStyle(fontSize: 40,fontFamily: "myfont"),),
-                 SizedBox(height: 30),
-
-                SvgPicture.asset("assets/icons/chat.svg",width: 400,),
-               
+                Text(
+                  "Welcome",
+                  style: TextStyle(fontSize: 40, fontFamily: "myfont"),
+                ),
+                SizedBox(height: 30),
+                SvgPicture.asset(
+                  "assets/icons/chat.svg",
+                  width: 400,
+                ),
                 SizedBox(height: 50),
-
                 ElevatedButton(
                     onPressed: () {
                       Navigator.pushNamed(
                           context, '/login'); //we assign RouteName of LoginPage
                     },
                     style: ButtonStyle(
-                        backgroundColor:
-                            MaterialStateProperty.all(Colors.pink),
+                        backgroundColor: MaterialStateProperty.all(Colors.pink),
                         padding: MaterialStateProperty.all(
                             const EdgeInsets.symmetric(
                                 vertical: 15, horizontal: 100)),
@@ -49,10 +48,7 @@ class Welcome extends StatelessWidget {
                   height: 20,
                 ),
                 ElevatedButton(
-                    onPressed: () {
-                      Navigator.pushNamed(
-                          context, '/signup'); //we assign RouteName of LoginPage
-                    },
+                    onPressed: () {},
                     style: ButtonStyle(
                         backgroundColor:
                             MaterialStateProperty.all(Colors.purple[800]),
@@ -69,15 +65,11 @@ class Welcome extends StatelessWidget {
               ],
             ),
           ),
-      
-      
-
           Positioned(
               left: 0, //starts from top left corner to bottom left corner
               child: Image.asset("assets/images/main_top.png", width: 111)),
           Positioned(
-              bottom:
-                  0, //starts from bottom left corner until top left corner
+              bottom: 0, //starts from bottom left corner until top left corner
               child: Image.asset("assets/images/main_bottom.png", width: 80))
         ]),
       ),
